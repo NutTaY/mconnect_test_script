@@ -35,13 +35,11 @@ FROM
                     ohc_survey_answers
                 WHERE
                     answer != 0
-                    AND survey_id != 42
                 GROUP BY
                     question_no
             ) AS total ON ohc_survey_answers.question_no = total.question_no
         WHERE
             answer != 0
-            AND survey_id != 42
         GROUP BY
             ohc_survey_answers.question_no,
             answer
